@@ -38,6 +38,7 @@ chrome.runtime.onMessage.addListener( (message, sender, sendResponse)=>{
 
     if(message.action === "request_recording"){
         console.log("requesting recording")
+        
 
         sendResponse(`processed: ${message.action}`);
 
@@ -63,3 +64,27 @@ chrome.runtime.onMessage.addListener( (message, sender, sendResponse)=>{
     }
 
 })
+
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//     if (message.action === "set_volume") {
+//         const video = document.querySelector('video');
+//         if (video) {
+//             video.volume = message.volume;
+//             sendResponse({ success: true });
+//         } else {
+//             sendResponse({ success: false, error: "No video element found" });
+//         }
+//     }
+// });
+
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//     if (message.action === "set_youtube_volume") {
+//         const player = document.querySelector('video');
+//         if (player) {
+//             player.setVolume(1); // Set volume to 1% (YouTube API uses values from 0 to 100)
+//             sendResponse({ success: true });
+//         } else {
+//             sendResponse({ success: false, error: "No YouTube player found" });
+//         }
+//     }
+// });
